@@ -1,0 +1,97 @@
+<!-- 满减 -->
+<view class="discount">
+  <text class="discount_txt">减</text>满50元减10元(在线支付专享)
+</view>
+<!-- 左侧菜单列表 -->
+<scroll-view class="left-menu" scroll-y="true">
+  <view class="left-menu-common {{activeIndex==index?'left-menu-selected':'left-menu-unselected'}}" 
+  wx:for="{{listData}}" wx:key="{{index}}" data-index="{{index}}" bindtap="selectMenu">
+    <view class="list-menu-name">{{item.name}}</view>
+  </view>
+</scroll-view>
+<!-- 右侧单品类表 -->
+<scroll-view scroll-y="true" style="height:1200rpx;" scroll-into-view="menu{{activeIndex}}" scroll-with-animation="true">
+  <!-- 当前菜单下所有内容 -->
+  <view class="content" wx:for="{{listData}}" id="menu{{index}}">
+    <!-- 菜单名 -->
+    <view class="list-tab">
+    {{item.name}}
+    </view>
+    <!-- 菜单下单品列表 -->
+    <view  wx:for="{{item.foods}}" wx:for-item="foodItem" wx:for-index="idx"
+    class="content-list">
+      <!-- 单品图片 -->
+      <view class="list-image-box">
+        <image src="{{foodItem.image_url}}" mode="widthFix" class="list-image"></image>
+      </view>
+      <!-- 单品介绍(单品名,价格) -->
+      <view class="list-name-box">
+      <view>{{foodItem.name}}</view>
+      <view class="list-price">
+      {{foodItem.specfoods[0].price}}
+      <!-- 添加到购物车的图标    加号 -->
+      <i class="iconfont icon-jiahao  add-icon" data-type="{{index}}" 
+      data-index="{{idx}}" bindtap="addToCart"></i>
+      </view>   
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<!-- 底部菜单部分 -->
+<view class="bottom-operate-menu" wx:if="{{loading}}">
+  <!-- 购物车 -->
+  <view class="shopping-cart">
+    <!-- 购物车图标 -->
+    <view style="display:flex">
+      <i class="iconfont icon-gouwuche shopping-cart-icon {{sumMoney!=0? 'active-color':''}}" bindtap="showCarList">
+        <!-- 角标 -->
+        <span class="number-msg" wx:if="{{carNumber!=0}}">{{carNumber}}</span>
+      </i>
+      <!-- 购物车金额 -->
+      <view class="shopping-cart-price" wx:if="{{sumMoney==0}}">购物车是空的</view>
+      <view class="shopping-cart-price " wx:if="{{sumMoney!=0}}" style="color:white">¥ {{sumMoney}}.00</view>
+    </view>
+   
+  </view>
+  <!-- 结算按钮（选好了）按钮 -->
+  <view class="submit-btn {{sumMoney!=0 ? 'active-color-bg':''}}" bindtap="goBalance">
+    <view class="submit-btn-label {{sumMoney!=0? 'color-white':''}}" >选好了</view>
+  </view>
+</view>
+<!-- 遮罩层 -->
+<view class="drawer-screen" bindtap="showCarList" wx:if="{{showCar}}"></view>
+<!-- 购物车列表详情 -->
+<view class="carlist-content" wx:if="{{showCar}}">
+  <!-- 表头 -->
+  <view class="car-list-title">
+    <label class="label-title-bar">
+      <label sytle="padding-left:5px">已选商品</label>
+    </label>
+    <label class="label-icon-clear" bindtap="clearCarList" style="padding-top:3px">
+      <i class="iconfont icon-lajitong"></i>
+      <label>清空购物车</label>
+    </label>
+  </view>
+  <!-- 数据列表 -->
+  <scroll-view scroll-y="true" class="{{carList.length>5?'cart-scroll-list':''}}">
+    <view class="car-list-box" wx:for="{{carList}}">
+       <!-- 左侧:单品名称及规格 -->
+      <view class="listL-info">
+        <view>{{item.name}}</view>
+        <view class="list-info-size">{{item.detail}}</view>
+      </view>
+      <!-- 右侧:单品数量,价格及小计 -->
+      <view class="listR-info">
+        <view class="listR-icon-con">
+          <label class="active-color">¥{{item.sum}}.00</label>
+          <i class="iconfont icon-jianshaojianqujianhao icon-li-circle" data-index="{{index}}" bindtap="decNumber"></i>
+          {{item.number}}
+          <i class="iconfont icon-jiahao active-color" sytle="font-size:20px" data-index="{{index}}" bindtap="addNumber"></i>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 满减优惠广告 -->
+<view class="cut-bar" wx:if="{{sumMoney==0 && loading}}">满25元立减3元（手机下单专享）</view>
+<view class="cut-bar" wx:if="{{sumMoney<25 && sumMoney!=0 && loading}}">满25元立减3元,还差{{25-sumMoney}}元,快去凑单~</view>

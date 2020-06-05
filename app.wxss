@@ -1,0 +1,61 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/* 引入字体库 */
+@import 'style/iconfont.wxss';
+
+/* 定义图标样式库 阿里云iconfont图标库 */
+.icon-iconfont11:before {
+  content: "\e63f";
+}
+
+.icon-iconfont:before {
+  content: "\e63b";
+}
+
+.icon-iconfontup:before {
+  content: "\e640";
+}
+
+.icon-icon10:before {
+  content: "\e609";
+}
+
+.icon-icon11:before {
+  content: "\e60a";
+}
+
+.icon-icon12:before {
+  content: "\e60b";
+}
+
+.icon-iconfont6:before {
+  content: "\e606";
+}
+
+.icon-iconfont24:before {
+  content: "\e618";
+}
+
+.icon-iconfonticon-jingga:before {
+  content: "\e638";
+}
+
+.icon-iconfonticon-shouye:before {
+  content: "\e641";
+}
+
+.icon-iconfonticon-xitong:before {
+  content: "\e642";
+}
+
+.icon-iconfonticon-yonghu:before {
+  content: "\e643";
+}

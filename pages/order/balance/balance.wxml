@@ -1,0 +1,46 @@
+<view class="top-bar">
+	请确认您的订单:
+</view>
+<!-- 订单详情 -->
+<view class="order-info">
+	<!-- 标题 -->
+	<view class="order-info-title">订单详情</view>
+	<!-- 订单项列表 -->
+	<view class="cart-list-box" wx:for="{{order.foods}}" wx:for-item="item" wx:key="list">
+		<!-- 菜品名称  -->
+		<view class="list-item-name">
+			{{item.name}}
+		</view>
+		<!-- 菜品单价及数量 -->
+		<view class="list-item-price-num">
+			<view>¥{{item.price}}.00</view>
+			<view style="color:#a3a3a3">*{{item.num}}</view>
+		</view>
+	</view>
+	<!-- 满减 -->
+	<view class="order-cut" wx:if="{{order.promotion&&sumMoney>=50}}">
+		<label class="order-cut-dec">减</label>
+		<label class="order-cut-note">{{order.promotion.num}}</label>
+		<label class="order-cut-number">-¥{{order.promotion.discount}}</label>
+	</view>
+	<!-- 金额 -->
+	<view class="order-sum">
+		<label>总计</label>
+		<label class="order-sum-number">¥{{sumMoney}}</label>
+	</view>
+</view>
+<!-- 备注 -->
+<view class="note">
+	<label class="note-title">备注</label>
+	<textarea class="note-text" placeholder="如有其它要求,请再此输入备注"></textarea>
+</view>
+<view class="bottom-operate-menu">
+	<!-- 购物车 -->
+	<view class="shopping-cart">
+			<view class="shopping-cart-price " style="color:white">合计:¥ {{sumMoney}}.00</view>
+	</view>
+	<!-- 支付按钮 -->
+	<view class="submit-btn active-color-bg" bindtap="gotoPay">
+		<view class="submit-btn-label color-white">去支付</view>
+	</view>
+</view>

@@ -1,0 +1,138 @@
+/* 页面背景 */
+page{
+  background: #f8f8f8;
+}
+.top-bar{
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  background: #fff;
+  padding: 2px 5px;
+}
+/* 订单详情 */
+.order-info{
+  background: #fff;
+  margin: 15rpx;
+}
+.order-info-title{
+  font-size: 12px;
+  color: #d1d1d1;
+  padding: 12px;
+  border-bottom: 1px #e3e3e3 solid;
+}
+/* 单项样式 */
+.cart-list-box{
+  background: #fff;
+  display: flex;
+  font-size: 15px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.list-item-name{
+  padding: 5px 15px;
+  width: 50%;
+}
+.list-item-price-num{
+  width: 50%;
+  padding: 5px;
+  padding-left: 60%;
+}
+/* 满减 */
+.order-cut{
+  height: 30px;
+  padding:5px 15px;
+  border-bottom: 1px #e3e3e3 solid;
+}
+.order-cut-dec{
+  background: red;
+  color: white;
+  font-size: 13px;
+  padding: 3px;
+}
+.order-cut-note{
+  margin-left: 3px;
+  font-size: 14px;
+}
+.order-cut-number{
+  float: right;
+  font-size: 14px;
+  margin-right: 45rpx;
+}
+/* 金额 */
+.order-sum{
+  height: 30px;
+  padding: 5px 15px;
+  font-size: 14px;
+}
+
+.order-sum-number{
+  float: right;
+  color: #ff9c35;
+  font-size: 14px;
+  margin-right: 30px;
+}
+/* 备注 */
+.note{
+  padding: 5px 15px;
+  margin-top: 10px;
+  background: #fff;
+}
+.note-title{
+  font-size: 12px;
+  color: #A3A3A3;
+}
+.note-text{
+  width: 90%;
+  font-size: 12px;
+  padding: 10px;
+  height: 80px;
+  background: #f2f2f2;
+}
+/* 底部菜单 */
+.bottom-operate-menu{
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  height: 55px;
+  display: flex;
+  z-index: 1001;
+}
+/* 购物车 */
+.shopping-cart{
+  width: 75%;
+  background: #353535;
+  height: 100%;
+}
+/* 购物车激活颜色 */
+.active-color{
+  color: #ff9c35;
+}
+
+/* 购物车的总金额 */
+.shopping-cart-price{
+  color: #a9a9a9;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 15px;
+  height: 100%;
+}
+/* 结算按钮 */
+.submit-btn{
+  width: 25%;
+  height: 100%;
+  background: #f7f7f7;
+  display: flex; 
+}
+/* 结算按钮文本 */
+.submit-btn-label{
+  color: #a9a9a9;
+  font-size: 15px;
+  margin: auto;
+}
+/* 按钮激活背景色 */
+.active-color-bg{
+  background: #ff9c35;
+}
+.color-white{
+  color: #fff;
+}

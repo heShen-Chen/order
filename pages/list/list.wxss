@@ -1,0 +1,231 @@
+/* pages/list/list.wxss */
+.discount{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #fef9e6;
+  font-size: 28rpx;
+  text-align: center;
+  color: #999;
+  z-index: 111;
+}
+.discount_txt{
+  color: #fff;
+  background: red;
+  margin-right: 20rpx;
+  padding:5rpx 10rpx;
+}
+/* 左侧菜单 */
+.left-menu{
+  width:160rpx;
+  position: absolute;
+  font-size: 28rpx;
+  left: 0;
+  z-index: 10;
+}
+/* 菜单项的基本样式 */
+.left-menu-common{
+  height: 100rxp;
+  line-height: 100rpx;
+  text-align: center;
+}
+/* 菜单项未选中的样式 */
+.left-menu-unselected{
+  border-bottom: 1rpx solid #e3e3e3;
+  color: #6c6c6c;
+  background: #f9f9f9;
+}
+/* 菜单项选中的样式 */
+.left-menu-selected{
+  border-bottom: 3rpx solid #ff9c35;
+  color: #ff9c35;
+  background: #fff;
+}
+/* 右侧菜单 */
+/* 菜单名称 */
+.list-tab{
+  margin-left: 170rpx;
+  font-size: rpx;
+  background: #f3f4f6;
+  padding:2rpx;
+  color: #ff9c35;
+}
+/* 单品信息 */
+.content-list{
+  margin-left: 160rpx;
+  display: flex;
+  border-bottom: 1rpx solid #e3e3e3;
+}
+.list-image-box{
+  width:160rpx;
+  height: 140rpx;
+  text-align: center;
+}
+.list-image{
+  height: 60rpx;
+  width: 108rpx;
+  margin-top: 15rpx;
+}
+/* 菜品名称 */
+.list-name-box{
+  width: 300rpx;
+  height: 140rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+/* 价格 */
+.list-price{
+  margin-top: 20rpx;
+  color: #f05a86; 
+}
+.add-icon{
+  color: #ff9c35;
+  float: right;
+  font-size: 45rpx;
+}
+/* 底部菜单 */
+.bottom-operate-menu{
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  height: 55px;
+  display: flex;
+  z-index: 1001;
+}
+/* 购物车 */
+.shopping-cart{
+  width: 75%;
+  background: #353535;
+  height: 100%;
+}
+/* 购物车图标 */
+.shopping-cart-icon{
+  font-size: 40px;
+  color: #878787;
+  margin-left: 10px;
+  position: relative;
+}
+/* 购物车激活颜色 */
+.active-color{
+  color: #ff9c35;
+}
+
+/* 角标 */
+.number-msg{
+  position: absolute;
+  background: red;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 50%;
+  text-align: center;
+  padding:1px 5px;
+  top: 0;
+  right: -5px;
+  
+}
+/* 购物车的总金额 */
+.shopping-cart-price{
+  color: #a9a9a9;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 15px;
+}
+/* 结算按钮 */
+.submit-btn{
+  width: 25%;
+  height: 100%;
+  background: #f7f7f7;
+  display: flex; 
+}
+/* 结算按钮文本 */
+.submit-btn-label{
+  color: #a9a9a9;
+  font-size: 15px;
+  margin: auto;
+}
+/* 按钮激活背景色 */
+.active-color-bg{
+  background: #ff9c35;
+}
+.color-white{
+  color: white;
+}
+/* 遮罩层 */
+.drawer-screen{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+/* 购物车内容列表 */
+.carlist-content{
+  position: fixed;
+  bottom: 55px;
+  width: 100%;
+  z-index: 1001;
+  overflow: hidden;
+}
+.car-list-title{
+  background: #f0f0f0;
+  height: 30px;
+}
+.label-title-bar{
+  color: #878787;
+  font-size: 12px;
+  border-left: 4px solid #ff9c35;
+  margin-left: 20px;
+}
+.label-icon-clear{
+  float: right;
+  margin-right: 10px;
+  color: #878787;
+  font-size: 12px;
+}
+/* 购物车产品列表项 */
+.car-list-box{
+  background: #fff;
+  display: flex;
+  font-size: 13px;
+  border-bottom: 1px #e3e3e3 solid;
+}
+.listL-info{
+  width: 50%;
+  padding: 5px 15px;
+}
+.list-info-size{
+  font-size: 10px;
+  color: #b1b1b1;
+}
+.listR-info{
+  width: 50%;
+  padding: 10px;
+}
+.icon-li-circle{
+  margin-left: 15px;
+  font-size: 20px;
+}
+.listR-icon-con{
+  float: right;
+}
+/* scrollview 限定高度 */
+.cart-scroll-list{
+  height: 450rpx;
+}
+/* 满减优惠 */
+.cut-bar{
+  position: fixed;
+  z-index: 1001;
+  bottom: 55px;
+  background: #ffcd9b;
+  width: 100%;
+  height: 20px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
